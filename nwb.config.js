@@ -3,5 +3,13 @@ module.exports = {
   npm: {
     esModules: true,
     umd: false
+  },
+  webpack: {
+    rules: {
+      "less-css": {
+        modules: true,
+        localIdentName: '[folder]-[local]'
+      },
+    },
   }
 }
