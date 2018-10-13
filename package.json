@@ -40,6 +40,7 @@
   "keywords": [
     "react-component",
     "infinite",
-    "list-view"
+    "list-view",
+    "mobile-scroll"
   ]
 }
