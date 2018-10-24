@@ -1,7 +1,21 @@
+import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 import s from './index.less'
 
 export default class ListView extends PureComponent {
+
+  static propTypes = {
+    data: PropTypes.array.isRequired,
+    height: PropTypes.number,
+    onEndReached: PropTypes.func,
+    onEndReachedThreshold: PropTypes.number,
+    onScroll: PropTypes.func,
+    onStartReached: PropTypes.func,
+    onStartReachedThreshold: PropTypes.number,
+    paddingTop: PropTypes.number,
+    refProp: PropTypes.any,
+    renderItem: PropTypes.func.isRequired
+  }
 
   static defaultProps = {
     height: window.innerHeight,
@@ -9,7 +23,7 @@ export default class ListView extends PureComponent {
     onEndReachedThreshold: 300,
     onScroll: () => null,
     onStartReached: () => null,
-    onStartReachedThreshold: 300,
+    onStartReachedThreshold: 300
   }
 
   render() {
@@ -22,7 +36,8 @@ export default class ListView extends PureComponent {
         <div
           ref={refProp}
           className={s.container}
-          onScroll={this.handleScroll}>
+          onScroll={this.handleScroll}
+        >
           <ul className={s.list}>
             <div style={{height: paddingTop[paddingTop.length - 1]}}/>
             {data.map((i, index) => {
