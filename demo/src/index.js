@@ -35,8 +35,8 @@ class Demo extends Component {
     return (
       <Virtual
         ref={this.virtual}
-        pageSize={16}
-        recycleStartCount={100}
+        pageSize={15}
+        recycleStartCount={30}
         data={this.state.listData}
         onEndReached={this.onEndReached}
         renderItem={this.renderItem}
